@@ -6,78 +6,57 @@ const SignIn = () => {
 	const [password, setPassword] = useState<string>('')
 
 	return (
-		<div 
-			className="sign-in"
-		>
-			<div 
-				className="questar-logo sign-in__logo"
-			/>
-			<div
-				className='sign-in__input-section'
-			>
-				<div
-					className='sign-in__input-section__title'
-				>
-					login
-				</div>
-				<div 
-					className='sign-in__input-section__input-container'
-					onClick={() => setLogin('')}
-				>
-					<input 
-						onClick={(e) => {
-							e.preventDefault()
-							e.stopPropagation()
-						}}
-						onChange={(e) => setLogin(e.target.value)}
-						className='sign-in__input-section__input'
-						value={login}
+		<div>
+			<FancyBackground className={"fancy-background__fullWidth"}/>
+			<Block>
+				<div className="sign-in">
+					<div
+						className="questar-logo sign-in__logo"
 					/>
-				</div>
-			</div>
-			<div
-				className='sign-in__input-section'
-			>
-				<div
-					className='sign-in__input-section__title'
-				>
-					password
-				</div>
-				<div 
-					className='sign-in__input-section__input-container'
-					onClick={() => setPassword('')}
-				>
-					<input 
-						onClick={(e) => {
-							e.preventDefault()
-							e.stopPropagation()
-						}}
-						onChange={(e) => setPassword(e.target.value)}
-						value={password}
-						className='sign-in__input-section__input'
-					/>
-				</div>
-			</div>
-
-			<a
-				className='sign-in__forgot'
-				href='/'
-			>
-				Forgot my password
-			</a>
-
-			<div
-				className='sign-in__sign-up'
-			>
-				<div>
-					<span>Don’t have an account?</span>
-					<a
-						href='/signup'
+					<div
+						className='sign-in__input-section'
 					>
-						Sign up
+						<div
+							className='sign-in__input-section__title'
+						>
+							login
+						</div>
+						<CustomInput value={login} onChange={(e) => setLogin(e)} />
+					</div>
+					<div
+						className='sign-in__input-section'
+					>
+						<div
+							className='sign-in__input-section__title'
+						>
+							password
+						</div>
+						<CustomInput value={password} onChange={(e) => setPassword(e)} type={'password'} />
+					</div>
+
+					<a
+						className='sign-in__forgot'
+						href='/'
+					>
+						Forgot my password
 					</a>
+
+					<button className={"sign-in__button"} onClick={() => signIn(login)}>Log In</button>
+
+					<div
+						className='sign-in__sign-up'
+					>
+						<div>
+							<span>Don’t have an account?</span>
+							<a
+								href='/signup'
+							>
+								Sign up
+							</a>
+						</div>
+					</div>
 				</div>
-			</div>
+			</Block>
 		</div>
 	)
 }

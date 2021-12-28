@@ -16,7 +16,7 @@ function GuestRoutes() {
 
 function App() {
 	return (
-			<div style={{position: 'absolute'}}>
+			<div style={{position: 'absolute', width: "100%"}}>
 				{/* <Suspense fallback={<Loader size="lg" center />}> */}
 				<AuthApp fallback={<GuestRoutes />}>
 					<AuthenticatedApp />

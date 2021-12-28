@@ -1,0 +1,9 @@
+.block {
+    width: 86vw;
+    background-color: white;
+
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.06);
+    border-radius: 15px;
+
+    margin: 50px 7vw;
+}

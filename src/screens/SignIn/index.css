@@ -77,8 +77,28 @@
 
 .sign-in__forgot {
 	color: #31A2AC;
-	text-decoration: none;
 	text-decoration: underline;
+}
+
+.sign-in__button {
+	font-size: 18px;
+	background: #31A2AC;
+	width: 90%;
+	padding: 15px 20px;
+	border-radius: 30px;
+	border: 0;
+	margin-bottom: 25px;
+	color: white;
+	cursor: pointer;
+}
+
+.sign-in__button:hover {
+	background: #237c84;
+}
+
+.sign-in__button:active {
+	position: relative;
+	top: 3px;
 }
 
 .sign-in__sign-up {
