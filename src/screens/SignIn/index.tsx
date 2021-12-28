@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import './index.css'
+import CustomInput from "@components/CustomInput";
+import useAuth from "@hooks/useAuth";
+import Block from "@components/Block";
+import FancyBackground from "@components/FancyBackground";
 
 const SignIn = () => {
 	const [login, setLogin] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
+	const { signIn } = useAuth()
 
 	return (
 		<div>
