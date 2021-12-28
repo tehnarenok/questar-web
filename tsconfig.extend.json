@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+	  "baseUrl": "./src",
+	  "paths": {
+		"@hooks/*": ["hooks/*"],
+		"@screens/*": ["screens/*"],
+		"@components/*": ["components/*"],
+		"@api": ["api.tsx"],
+		"@types/*": ["types/*"]
+	  }
+	}
+}

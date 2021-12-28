@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AuthApp from '@components/AuthApp'
+import SignIn from '@screens/SignIn'
+import SignUp from '@screens/SignUp'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import AuthenticatedApp from './AuthenticatedApp'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function GuestRoutes() {
+	return (
+		<Routes>
+			<Route path="/signin" element={<SignIn />} />
+			<Route path="/signup" element={<SignUp />} />
+			<Route path='*' element={<Navigate to='/signin' />} />
+		</Routes>
+	)
 }
 
-export default App;
+function App() {
+	return (
+			<div style={{position: 'absolute'}}>
+				{/* <Suspense fallback={<Loader size="lg" center />}> */}
+				<AuthApp fallback={<GuestRoutes />}>
+					<AuthenticatedApp />
+				</AuthApp>
+					
+				{/* </Suspense> */}
+			</div>
+	)
+}
+
+export default App
