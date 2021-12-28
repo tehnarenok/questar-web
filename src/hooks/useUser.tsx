@@ -1,6 +1,8 @@
 import {User} from "../types/User";
+import useAuth from "./useAuth";
 
 const useUser = () => {
+    const { signIn } = useAuth()
     const getUsers = (): User[] => {
         return JSON.parse(localStorage.getItem('users') || '[]') || []
     }
@@ -29,13 +31,30 @@ const useUser = () => {
         let idx = users.findIndex((el: User) => el.login === user.login)
         if(idx < 0) {
             users.push(user)
+            signIn(user.login)
             localStorage.setItem('users', JSON.stringify(users))
         }
     }
 
+    const checkUser = (login: string, password: string): boolean => {
+        let users: User[] = getUsers()
+        let idx = users.findIndex((el: User) => el.login === login)
+        if(idx < 0) {
+            return false
+        }
+        if(users[idx].password === password) {
+            signIn(login)
+            return true
+        }
+        return false
+    }
+
     return {
         getUsers,
-        currentUser
+        currentUser,
+        changeUser,
+        addUser,
+        checkUser
     }
 }
 

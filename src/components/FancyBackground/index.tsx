@@ -1,6 +1,4 @@
 import './index.css'
-import {ReactElement, ReactNode} from "react";
-import {JsxElement} from "typescript";
 
 interface FancyBgProps extends React.HTMLAttributes<HTMLDivElement> {
 }

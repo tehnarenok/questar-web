@@ -36,3 +36,7 @@
 
     background-color: inherit;
 }
+
+.custom-input__container_required {
+    outline: 2px solid tomato;
+}

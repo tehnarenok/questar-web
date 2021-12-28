@@ -3,13 +3,14 @@ import './index.css'
 type CustomInputProps = {
     onChange?: (e: string) => void,
     value: string,
-    type?: 'password' | 'email' | 'number' | 'text' | 'tel'
+    type?: 'password' | 'email' | 'number' | 'text' | 'tel',
+    required?: boolean
 }
 
 const CustomInput = (props: CustomInputProps) => {
     return (
         <div
-            className='custom-input__container'
+            className={`custom-input__container ${props.required && 'custom-input__container_required'}`}
             onClick={(e) => {
                 if(props.onChange) props.onChange('')
             }}

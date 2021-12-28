@@ -4,11 +4,21 @@ import CustomInput from "@components/CustomInput";
 import useAuth from "@hooks/useAuth";
 import Block from "@components/Block";
 import FancyBackground from "@components/FancyBackground";
+import useUser from '@hooks/useUser';
 
 const SignIn = () => {
+	const { checkUser } = useUser()
 	const [login, setLogin] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
+	const [required, setRequired] = useState<boolean>(false)
 	const { signIn } = useAuth()
+
+	const handleLoginClick = () => {
+		if(checkUser(login, password)) {
+			setRequired(false)
+		}
+		setRequired(true)
+	}
 
 	return (
 		<div>
@@ -26,7 +36,7 @@ const SignIn = () => {
 						>
 							login
 						</div>
-						<CustomInput value={login} onChange={(e) => setLogin(e)} />
+						<CustomInput value={login} onChange={(e) => setLogin(e)} required={required} />
 					</div>
 					<div
 						className='sign-in__input-section'
@@ -36,7 +46,7 @@ const SignIn = () => {
 						>
 							password
 						</div>
-						<CustomInput value={password} onChange={(e) => setPassword(e)} type={'password'} />
+						<CustomInput value={password} onChange={(e) => setPassword(e)} type={'password'} required={required} />
 					</div>
 
 					<a
@@ -46,7 +56,7 @@ const SignIn = () => {
 						Forgot my password
 					</a>
 
-					<button className={"sign-in__button"} onClick={() => signIn(login)}>Log In</button>
+					<button className={"sign-in__button"} onClick={() => handleLoginClick()}>Log In</button>
 
 					<div
 						className='sign-in__sign-up'

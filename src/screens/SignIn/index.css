@@ -55,7 +55,7 @@
 	width: 21px;
 	height: 21px;
 	z-index: 1;
-}
+}   
 
 .sign-in__input-section__input:focus {
 	outline: none;
