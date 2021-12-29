@@ -1,0 +1,41 @@
+.quest-small {
+    padding: 30px;
+}
+
+.quest-small__button {
+    font-size: 18px;
+    background: #31A2AC;
+    text-align: center;
+    padding: 10px 23px;
+    border-radius: 30px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+.quest-small__button:hover {
+    background: #237c84;
+}
+
+.quest-small__button:active {
+    position: relative;
+    top: 3px;
+}
+
+.quest-small {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 100px;
+    grid-template-rows: auto;
+    gap: 0px 15px;
+    grid-template-areas:
+    "quest questbuy";
+}
+.quest-small .quest-info__header {
+    grid-area: quest; }
+.quest-small__buttonwrap {
+    grid-area: questbuy;
+
+}

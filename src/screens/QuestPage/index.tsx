@@ -1,4 +1,4 @@
-import './index.css'
+import '../Home/index.css'
 import FancyBackground from "@components/FancyBackground";
 import Block from "@components/Block";
 import './simvol-goroda-sankt-peterburga.png';
@@ -6,7 +6,7 @@ import useUser from "@hooks/useUser";
 import QuestInfoHeader from "@components/QuestInfoHeader";
 import QuestSmall from "@components/QuestSmall";
 
-const Home = () => {
+const QuestPage = () => {
 	const { currentUser } = useUser()
 	return (
 		<div style={{width: "100%"}}>
@@ -27,6 +27,9 @@ const Home = () => {
 											 members={"3-5"} score={4} rating={4}
 											 name={"Квест по Центральному району Санкт-Петербурга"}/>
 						</div>
+						<div className={"top-header-quest-image"}>
+							<img src={"https://cdn5.vedomosti.ru/crop/image/2019/9e/187n18/original-1las.jpg?height=934&width=1660"}/>
+						</div>
 						<div className={"top-header-questdescr"}>
 							Во время этого квеста вы окунетесь в историю одного из самых богатых на события городов России...
 						</div>
@@ -44,4 +47,4 @@ const Home = () => {
 	)
 }
 
-export default Home
+export default QuestPage

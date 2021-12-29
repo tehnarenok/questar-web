@@ -3,6 +3,7 @@ import SignIn from '@screens/SignIn'
 import SignUp from '@screens/SignUp'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import AuthenticatedApp from './AuthenticatedApp'
+import QuestPage from "@screens/QuestPage";
 
 function GuestRoutes() {
 	return (
