@@ -3,7 +3,7 @@ import {atom, useRecoilState} from "recoil";
 
 const authState = atom({
 	key: 'isAuth',
-	default: false
+	default: localStorage.getItem('isAuth') ===  'true'
 })
 
 const useAuth = () => {
