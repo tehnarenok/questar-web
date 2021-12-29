@@ -58,6 +58,20 @@
     margin-top: 15px;
 }
 
+.top-header-quest-image {
+    margin-top: 15px;
+}
+
+.top-header-quest-image img {
+    width: 100%;
+}
+
+.top-header-quest__biginfo {
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .quests {
     margin-top: -100px;
     position: relative;
