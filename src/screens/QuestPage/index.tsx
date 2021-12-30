@@ -1,17 +1,25 @@
 import '../Home/index.css'
-import FancyBackground from "@components/FancyBackground";
 import Block from "@components/Block";
 import './simvol-goroda-sankt-peterburga.png';
 import useUser from "@hooks/useUser";
 import QuestInfoHeader from "@components/QuestInfoHeader";
 import QuestSmall from "@components/QuestSmall";
+import {useEffect} from "react";
 
 const QuestPage = () => {
 	const { currentUser } = useUser()
+
+	useEffect(() =>  {
+		document.body.classList.add("bg")
+
+		return (() => {
+			document.body.classList.remove("bg")
+		})
+	}, [])
+
 	return (
 		<div style={{width: "100%"}}>
 			<div className={"top-header-w-content"}>
-				<FancyBackground className={"fancy-background__fullWidth"}/>
 				<div className={"top-header-w-content__wrapper"}>
 					<div className="questar-logo top-header-w-content__logo logogrid"/>
 					<div className="vertex_icon top-header-w-content__logo filtergrid"/>
@@ -35,6 +43,9 @@ const QuestPage = () => {
 						</div>
 						<div className={"top-header-quest__biginfo"}>
 							30-40 минут на выполнение
+						</div>
+						<div>
+							<a href="/question" className={"quest-small__button top-header-btn"}>Начать</a>
 						</div>
 					</div>
 				</Block>

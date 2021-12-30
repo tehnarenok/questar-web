@@ -3,7 +3,6 @@ import './index.css'
 import CustomInput from "@components/CustomInput";
 import useAuth from "@hooks/useAuth";
 import Block from "@components/Block";
-import FancyBackground from "@components/FancyBackground";
 import useUser from '@hooks/useUser';
 
 const SignIn = () => {
@@ -22,7 +21,6 @@ const SignIn = () => {
 
 	return (
 		<div>
-			<FancyBackground className={"fancy-background__fullWidth"}/>
 			<Block>
 				<div className="sign-in">
 					<div

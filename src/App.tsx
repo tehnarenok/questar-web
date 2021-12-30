@@ -4,6 +4,7 @@ import SignUp from '@screens/SignUp'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import AuthenticatedApp from './AuthenticatedApp'
 import QuestPage from "@screens/QuestPage";
+import Question from "@screens/Question";
 
 function GuestRoutes() {
 	return (
@@ -17,7 +18,7 @@ function GuestRoutes() {
 
 function App() {
 	return (
-			<div style={{position: 'absolute', width: "100%"}}>
+			<div>
 				{/* <Suspense fallback={<Loader size="lg" center />}> */}
 				<AuthApp fallback={<GuestRoutes />}>
 					<AuthenticatedApp />

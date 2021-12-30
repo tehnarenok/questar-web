@@ -1,7 +1,6 @@
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 import './index.css'
 import CustomInput from "@components/CustomInput";
-import FancyBackground from "@components/FancyBackground";
 import useAuth from '@hooks/useAuth';
 import useUser from '@hooks/useUser';
 
@@ -16,6 +15,16 @@ const SignUp = () => {
 	const [phone, setPhone] = useState<string>('')
 
 	const [required, setRequired] = useState<boolean[]>([false, false, false, false, false, false])
+
+
+
+	useEffect(() =>  {
+		document.body.classList.add("bg")
+
+		return (() => {
+			document.body.classList.remove("bg")
+		})
+	}, [])
 
 	const signUp = () => {
 		let requiredCopy = [false, false, false, false, false, false]
@@ -43,8 +52,7 @@ const SignUp = () => {
 
 
 	return (
-		<div>
-			<FancyBackground className={"fancy-background__fullWidth"}/>
+		<div className={"bg"}>
 			<div className='sign-up'>
 				<div className='sign-up__plus-icon'/>
 				<div

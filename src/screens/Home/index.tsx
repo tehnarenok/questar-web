@@ -1,17 +1,25 @@
 import './index.css'
-import FancyBackground from "@components/FancyBackground";
 import Block from "@components/Block";
 import './simvol-goroda-sankt-peterburga.png';
 import useUser from "@hooks/useUser";
 import QuestInfoHeader from "@components/QuestInfoHeader";
 import QuestSmall from "@components/QuestSmall";
+import {useEffect} from "react";
 
 const Home = () => {
 	const { currentUser } = useUser()
+
+	useEffect(() =>  {
+		document.body.classList.add("bg")
+
+		return (() => {
+			document.body.classList.remove("bg")
+		})
+	}, [])
+
 	return (
 		<div style={{width: "100%"}}>
 			<div className={"top-header-w-content"}>
-				<FancyBackground className={"fancy-background__fullWidth"}/>
 				<div className={"top-header-w-content__wrapper"}>
 					<div className="questar-logo top-header-w-content__logo logogrid"/>
 					<div className="vertex_icon top-header-w-content__logo filtergrid"/>
@@ -29,6 +37,9 @@ const Home = () => {
 						</div>
 						<div className={"top-header-questdescr"}>
 							Во время этого квеста вы окунетесь в историю одного из самых богатых на события городов России...
+						</div>
+						<div>
+							<a href="/questpage" className={"quest-small__button top-header-btn"}>Купить квест</a>
 						</div>
 					</div>
 				</Block>
