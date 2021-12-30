@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 import './index.css'
 import CustomInput from "@components/CustomInput";
 import useAuth from "@hooks/useAuth";
@@ -11,6 +11,14 @@ const SignIn = () => {
 	const [password, setPassword] = useState<string>('')
 	const [required, setRequired] = useState<boolean>(false)
 	const { signIn } = useAuth()
+
+	useEffect(() =>  {
+		document.body.classList.add("bg")
+
+		return (() => {
+			document.body.classList.remove("bg")
+		})
+	}, [])
 
 	const handleLoginClick = () => {
 		if(checkUser(login, password)) {
