@@ -5,6 +5,8 @@ import useUser from "@hooks/useUser";
 import QuestInfoHeader from "@components/QuestInfoHeader";
 import QuestSmall from "@components/QuestSmall";
 import {useEffect} from "react";
+import TopPlayers from "@components/TopPlayers";
+import useAuth from "@hooks/useAuth";
 
 const QuestPage = () => {
 	const { currentUser } = useUser()
@@ -51,6 +53,8 @@ const QuestPage = () => {
 						</div>
 					</div>
 				</Block>
+
+				<TopPlayers/>
 			</div>
 		</div>
 	)

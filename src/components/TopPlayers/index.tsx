@@ -1,3 +1,6 @@
+import './index.css'
+import Block from "@components/Block";
+
 type PlayerProps = {
     name: string,
     time: string,
