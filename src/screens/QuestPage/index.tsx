@@ -9,6 +9,8 @@ import {useEffect} from "react";
 const QuestPage = () => {
 	const { currentUser } = useUser()
 
+	const { signOut } = useAuth()
+
 	useEffect(() =>  {
 		document.body.classList.add("bg")
 
@@ -25,7 +27,7 @@ const QuestPage = () => {
 					<div className="vertex_icon top-header-w-content__logo filtergrid"/>
 					<div className="spacer"/>
 					<div className="top-header-w-content__username usernamegrid">{currentUser()?.name}</div>
-					<div className="user_icon top-header-w-content__logo icon2"/>
+					<div className="user_icon top-header-w-content__logo icon2" onClick={() => signOut()}/>
 				</div>
 
 				<Block>
