@@ -47,6 +47,6 @@ body {
 }
 
 .bg {
-	background-image: url("data:image/svg+xml,%3Csvg width='375' height='631' viewBox='0 0 375 631' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_f_17_745)'%3E%3Cpath d='M-164 -209H539V921H-164V-209Z' fill='url(%23paint0_angular_17_745)' style='mix-blend-mode:multiply'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f_17_745' x='-364' y='-409' width='1103' height='1530' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='100' result='effect1_foregroundBlur_17_745'/%3E%3C/filter%3E%3CradialGradient id='paint0_angular_17_745' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(242.405 311.446) rotate(141.073) scale(273.033 175.829)'%3E%3Cstop offset='0.015625' stop-color='%23021C1E'/%3E%3Cstop offset='0.151042' stop-color='%23004445'/%3E%3Cstop offset='0.401042' stop-color='%232C7873'/%3E%3Cstop offset='0.729167' stop-color='%2331A2AC'/%3E%3Cstop offset='0.9375' stop-color='%236FB98F'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E%0A");
 	background-size: cover;
+	background-image: url("/bg.png");
 }
